@@ -1,0 +1,95 @@
+<%- include ../partials/header %>
+
+<!-- Breadcrumbs -->
+<div class="row mt-2">
+  <div class="col-md-12 m-auto">
+    <%if (breadcrumbs) { %>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <% breadcrumbs.forEach(crumb => { if(!crumb.name.startsWith("?")){%>
+        <li class="breadcrumb-item" aria-current="page">
+          <a href="<%=crumb.url%>"><%= crumb.name %></a>
+        </li>
+        <%}})%>
+      </ol>
+    </nav>
+    <%} %>
+  </div>
+</div>
+<!-- Page banner image -->
+
+<!--content-->
+<div class="product">
+  <div class="container">
+
+    <!-- Flash messages -->
+  <% if(successMsg || errorMsg) {%>
+    <div class="row mt-3 mb-3">
+      <div class="col-md-12 m-auto">
+        <% if (successMsg) { %>
+        <div id="success" class="alert alert-success">
+          <%= successMsg %>
+        </div>
+        <% } else { %>
+        <div id="success" class="alert alert-success d-none"></div>
+        <% } %>
+      </div>
+      <div class="col-md-12 m-auto">
+        <% if (errorMsg) { %>
+        <div id="error" class="alert alert-danger">
+          <%= errorMsg %>
+        </div>
+        <% } else { %>
+        <div id="error" class="alert alert-danger d-none"></div>
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+    <!-- Breadcrumbs -->
+
+    <div class="spec">
+      <h3><%=pageName%></h3>
+      <div class="ser-t">
+        <b></b>
+        <span><i></i></span>
+        <b class="line"></b>
+      </div>
+    </div>
+
+
+    <div class=" con-w3l agileinf">
+
+      <% products.forEach((product) => { %>
+        <div class="col-md-3 pro-1">
+          <div class="col-m">
+          <a href="/products/<%=product.category.slug%>/<%=product._id%>" data-toggle="modal" data-target="#myModal1" class="offer-img">
+              <img src="<%= product.imagePath %>" class="img-responsive" alt="">
+            </a>
+            <div class="mid-1">
+              <div class="women">
+                <h6><a href="/products/<%=product.category.slug%>/<%=product._id%>"><%= product.title %></a></h6>							
+              </div>
+              <div class="mid-2">
+                <p ><em class="item_price">$<%= product.price %></em></p>
+                  <div class="block">
+                  <div class="starbox small ghosting"> </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <% if(product.available) {%>
+              <div class="add">
+                  <a href="/add-to-cart/<%=product._id%>" class="btn btn-danger my-cart-btn my-cart-b">Add to Cart</a>
+              </div>
+              <%} %>
+            </div>
+          </div>
+        </div>
+
+      <% }) %>
+
+      <div class="clearfix"></div>
+      </div>
+      <%- include ../partials/pagination %>
+  </div>
+</div>
+<%- include ../partials/footer %>

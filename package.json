@@ -1,0 +1,38 @@
+{
+  "name": "Nodejs shop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "description": "A simple nodejs shop",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Hamid moladoust",
+  "license": "MIT",
+  "dependencies": {
+    "admin-bro-mongoose": "^0.5.2",
+    "bcrypt-nodejs": "0.0.3",
+    "connect-flash": "^0.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "session": "^0.1.0",
+    "admin-bro": "^2.3.1",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "ejs-lint": "^1.1.0",
+    "admin-bro-expressjs": "^2.0.5",
+    "csurf": "^1.11.0",
+    "connect-mongo": "^3.2.0",
+    "debug": "~2.6.9",
+    "cookie-parser": "^1.4.5",
+    "morgan": "~1.9.1",
+    "express": "~4.16.1",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.4.1",
+    "faker": "^4.1.0",
+    "nodemailer": "^6.4.6",
+    "styled-components": "^5.1.0"
+  }
+}
